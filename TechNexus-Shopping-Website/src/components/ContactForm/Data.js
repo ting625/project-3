@@ -1,0 +1,15 @@
+export const contactForm = {
+	id: 'discover',
+	lightBg: true,
+	lightText: false,
+	lightTextDesc: false,
+	topLine: 'Contact Us',
+	headline: 'Technexus',
+	description: "At Technexus, we're dedicated to making your tech shopping experience smooth, efficient, and personalized. Whether you have questions about our products, need support with your order, or want to share feedback, we're here to help.",
+	imgStart: false,
+	img: require('../../images/company-logo.png').default,
+	alt: 'Planet',
+	dark: false,
+	primary: false,
+	darkText: true,
+}
