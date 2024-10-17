@@ -44,7 +44,7 @@ const Navbar = ({ toggle }) => {
                             <FaBars />
                         </MobileIcon>
                         <NavMenu>
-														<NavItem>
+							<NavItem>
                                 <NavLinks to="#"
                                     smooth={true}
                                     duration={500}
@@ -52,6 +52,16 @@ const Navbar = ({ toggle }) => {
                                     exact='true'
                                     offset={-80}>Home</NavLinks>
                             </NavItem>
+
+							<NavItem>
+                                <NavLinks to="services"
+                                    smooth={true}
+                                    duration={500}
+                                    spy={true}
+                                    exact='true'
+                                    offset={-80}>Product</NavLinks>
+                            </NavItem>
+
                             <NavItem>
                                 <NavLinks to="discover"
                                     smooth={true}
@@ -60,14 +70,7 @@ const Navbar = ({ toggle }) => {
                                     exact='true'
                                     offset={-80}>About</NavLinks>
                             </NavItem>
-														<NavItem>
-                                <NavLinks to="services"
-                                    smooth={true}
-                                    duration={500}
-                                    spy={true}
-                                    exact='true'
-                                    offset={-80}>Product</NavLinks>
-                            </NavItem>
+
                             <NavItem>
                                 <NavLinks to="contact"
                                     smooth={true}
@@ -77,7 +80,6 @@ const Navbar = ({ toggle }) => {
                                     offset={-80}>Contact</NavLinks>
                             </NavItem>
                         </NavMenu>
-                        
                     </NavbarContainer>
                 </Nav>
             </IconContext.Provider>
