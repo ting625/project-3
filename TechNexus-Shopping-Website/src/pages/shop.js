@@ -68,11 +68,6 @@ const Shop = () => {
               <AddToCartButton onClick={() => dispatch(addToCart(product))}>
                 Add to Cart
               </AddToCartButton>
-              <RemoveFromCartButton
-                onClick={() => dispatch(removeFromCart(product))}
-              >
-                Remove from Cart
-              </RemoveFromCartButton>
             </ShopCard>
           ))}
         </ShopWrapper>
