@@ -26,24 +26,6 @@ const Footer = () => {
     return (
         <FooterContainer id='footer'>
             <FooterWrap>
-                <FooterLinksContainer>
-                    <FooterLinksWrapper>
-                        <FooterLinkItems>
-                            <FooterLinkTitle>Product</FooterLinkTitle>
-                        </FooterLinkItems>
-                        <FooterLinkItems>
-                            <FooterLinkTitle>Company</FooterLinkTitle>
-                        </FooterLinkItems>
-                    </FooterLinksWrapper>
-                    <FooterLinksWrapper>
-                        <FooterLinkItems>
-                        <FooterLinkTitle>Shop</FooterLinkTitle>
-                        </FooterLinkItems>
-                        <FooterLinkItems>
-                        <FooterLinkTitle>Contact</FooterLinkTitle>
-                        </FooterLinkItems>
-                    </FooterLinksWrapper>
-                </FooterLinksContainer>
                 <SocialMedia>
                     <SocialMediaWrap>
                         <SocialLogo to="/" onClick={toggleHome}>

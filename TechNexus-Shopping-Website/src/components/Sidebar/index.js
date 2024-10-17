@@ -17,22 +17,19 @@ const Sidebar = ({isOpen, toggle}) => {
             </Icon>
             <SidebarWrapper>
                 <SidebarMenu>
-                    <SidebarLink to='about' onClick={toggle}>
-                        Projects
-                    </SidebarLink>
                     <SidebarLink to='discover' onClick={toggle}>
-                        Company
+                        About
                     </SidebarLink>
                     <SidebarLink to='services' onClick={toggle}>
-                        Services
+                        Product
                     </SidebarLink>
                     <SidebarLink to='contact' onClick={toggle}>
-                        Contact Form
+                        Contact
                     </SidebarLink>
                 </SidebarMenu>
                 <SideBtnWrap>
-                    <SidebarRoute href="tel:+16043294094">
-                        Call 604-329-4094
+                    <SidebarRoute href="tel:+19490000000">
+                        Call 949-000-0000
                     </SidebarRoute>
                 </SideBtnWrap>
             </SidebarWrapper>
