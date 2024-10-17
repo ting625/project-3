@@ -19,7 +19,7 @@ import {
   TopLine,
   Heading,
   Subtitle,
-} from '../ContactForm/FormElement.js';
+} from './FormElement.js';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({

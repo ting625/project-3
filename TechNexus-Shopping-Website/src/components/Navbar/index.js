@@ -12,7 +12,7 @@ import {
     NavBtn,
     NavBtnLink
 } from './NavbarElements';
-import logo from '../.././images/header-logo.png';
+import logo from '../../images/header-logo.png';
 
 const Navbar = ({ toggle }) => {
     const [scrollNav, setScrollNav] = useState(false)
