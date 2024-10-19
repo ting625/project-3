@@ -25,13 +25,20 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    subject: '',
     message: '',
   });
 
   const [formSubmissionStatus, setFormSubmissionStatus] = useState('');
 
-  const { name, email, subject, message } = formData;
+  const { name, email, message } = formData;
+
+  /*
+  const encode = (data) => {
+    return Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+      .join('&');
+  };
+  */
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -40,25 +47,28 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch('/', {
+    // Log the data that will be sent
+    console.log('Transmitting data:', {
+    'form-name': 'contact',
+    ...formData,
+    });
+
+    fetch('/api/inventory', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
     })
       .then(() => {
         setFormSubmissionStatus('Form submitted successfully!');
-        setFormData({ name: '', email: '', subject: '', message: '' });
+        setFormData({ name: '', email: '', message: '' });
       })
       .catch((error) => {
         console.error(error);
         setFormSubmissionStatus('Form submission failed. Please try again later.');
       });
-  };
-
-  const encode = (data) => {
-    return Object.keys(data)
-      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-      .join('&');
   };
 
   return (
