@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'; // Use useHistory for v5
-import Video1 from '../../videos/laptop.mov';
-import Video2 from '../../videos/camera.mov';
+//import Video1 from '../../videos/laptop.mov';
+//import Video2 from '../../videos/camera.mov';
 import Video3 from '../../videos/smart-phone.mp4';
 
 import {
@@ -20,11 +20,11 @@ import { animateScroll as scroll } from 'react-scroll';
 
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
-  const [videoSrc, setVideoSrc] = useState(Video1);
+  const [videoSrc, setVideoSrc] = useState(Video3);
   const history = useHistory(); // Use history for navigation
 
   useEffect(() => {
-    const videos = [Video1, Video2, Video3];
+    const videos = [Video3];
 
     const videoElement = document.getElementById('heroVideo');
 
