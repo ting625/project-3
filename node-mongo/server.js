@@ -2,7 +2,9 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
+
 require('./app/models/inventory.model.js');
+require('./app/models/signin.model.js');
 
 
 // Configuring the database
@@ -24,7 +26,7 @@ mongoose.connection
 });
 
 require('./app/routes/inventory.router.js')(app);
-
+require('./app/routes/signin.router.js')(app);
 
 // Create a Server
 const server = app.listen(8080, function () {
