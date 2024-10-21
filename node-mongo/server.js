@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json())
 
-require('./app/models/inventory.model.js');
+require('./app/models/contact.model.js');
 require('./app/models/signin.model.js');
 
 
@@ -25,7 +25,7 @@ mongoose.connection
     console.log(`Connection error: ${err.message}`);
 });
 
-require('./app/routes/inventory.router.js')(app);
+require('./app/routes/contact.router.js')(app);
 require('./app/routes/signin.router.js')(app);
 
 // Create a Server

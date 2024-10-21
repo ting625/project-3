@@ -53,7 +53,7 @@ const ContactForm = () => {
     ...formData,
     });
 
-    fetch('/api/inventory', {
+    fetch('/api/contact', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
