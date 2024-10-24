@@ -6,7 +6,6 @@ import {
   FormLabel,
   FormRow,
   HalfWidthInput,
-  FormSelect,
   FormTextArea,
   FormButton,
   Text,
@@ -16,7 +15,6 @@ import {
   Column1,
   Column2,
   TextWrapper,
-  TopLine,
   Heading,
   Subtitle,
 } from './FormElement.js';

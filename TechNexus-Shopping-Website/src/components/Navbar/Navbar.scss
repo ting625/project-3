@@ -1,0 +1,117 @@
+
+.nav {
+    background: #000;
+    height: 80px;
+    margin-top: -80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    transition: all 0.5s ease;
+    
+    @media screen and (max-width: 960px) {
+        transition: all 0.5s ease;
+    }
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 180px;
+    z-index: 1;
+    width: 100%;
+    padding: 55px 24px 30px 24px;
+    max-width: 1100px;
+}
+
+.nav-logo {
+    color: #fff;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    text-decoration: none;
+}
+
+.mobile-icon {
+    display: none;
+
+    // mobile only display
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    text-align: center;
+    margin: auto;
+
+    // not shown on mobile
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-links {
+    color: #fff;    
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+
+    // bottom orange bar when selected
+    &.active {
+        border-bottom: 3px solid #ff8368;
+    }
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+.nav-btn-link {
+    border-radius: 50px;
+    background: #ff8368;
+    white-space: nowrap;
+    padding: 10px 22px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        transition: all 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
+}

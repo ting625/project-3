@@ -1,9 +1,7 @@
+// index.js
 import React, { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom'; // Use useHistory for v5
-//import Video1 from '../../videos/laptop.mov';
-//import Video2 from '../../videos/camera.mov';
+import { useHistory } from 'react-router-dom';
 import Video3 from '../../videos/smart-phone.mp4';
-
 import {
   HeroContainer,
   HeroBg,
@@ -21,11 +19,10 @@ import { animateScroll as scroll } from 'react-scroll';
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
   const [videoSrc, setVideoSrc] = useState(Video3);
-  const history = useHistory(); // Use history for navigation
+  const history = useHistory();
 
   useEffect(() => {
     const videos = [Video3];
-
     const videoElement = document.getElementById('heroVideo');
 
     const handleVideoEnd = () => {
@@ -53,7 +50,7 @@ const HeroSection = () => {
   };
 
   const handleShopNowClick = () => {
-    history.push("/shop"); // Navigate to /shop with useHistory in v5
+    history.push('/shop');
   };
 
   return (
@@ -71,7 +68,7 @@ const HeroSection = () => {
       <HeroContent>
         <HeroH1>Where Innovation Meets Everyday Life</HeroH1>
         <HeroP>
-        Shop the best in 3C electronics tailored to your life—computers, smartphones, camera, and beyond.
+          Shop the best in 3C electronics tailored to your life—computers, smartphones, camera, and beyond.
         </HeroP>
         <HeroBtnWrapper>
           <Button
@@ -84,7 +81,7 @@ const HeroSection = () => {
             spy={true}
             exact="true"
             offset={-80}
-            onClick={handleShopNowClick} // Updated onClick handler
+            onClick={handleShopNowClick}
           >
             SHOP NOW {hover ? <ArrowRight /> : <ArrowForward />}
           </Button>
@@ -95,4 +92,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-

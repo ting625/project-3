@@ -1,3 +1,4 @@
+// index.js
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import {
@@ -14,27 +15,23 @@ import {
 } from './SigninElements';
 
 export const SignIn = () => {
-    const history = useHistory(); // Get history from react-router-dom
+    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-
     const [formSubmissionStatus, setFormSubmissionStatus] = useState('');
 
     const handleSubmit = (e) => {
-        e.preventDefault(); // Prevent default form submission
-
-        // Log the email and password for the developer to check
+        e.preventDefault();
         console.log('Email:', email);
         console.log('Password:', password);
 
-        // Send data to API
         fetch('/api/signin', {
             method: 'POST',
             headers: {
               'Accept': 'application/json',
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify({email, password}),
+            body: JSON.stringify({ email, password }),
           })
             .then(() => {
               setFormSubmissionStatus('Form submitted successfully!');
@@ -44,8 +41,6 @@ export const SignIn = () => {
               setFormSubmissionStatus('Form submission failed. Please try again later.');
             });
 
-
-        // Redirect to Order Confirmation Page
         history.push('/order-confirmation');
     };
 
@@ -54,20 +49,20 @@ export const SignIn = () => {
             <FormWrap>
                 <Icon to="/">Login for Confirm Order</Icon>
                 <FormContent>
-                    <Form onSubmit={handleSubmit}> {/* Handle form submission */}
+                    <Form onSubmit={handleSubmit}>
                         <FormH1>Sign in to your account</FormH1>
                         <FormLabel htmlFor='email'>Email</FormLabel>
                         <FormInput
                             type='email'
                             value={email}
-                            onChange={(e) => setEmail(e.target.value)} // Update email state
+                            onChange={(e) => setEmail(e.target.value)}
                             required 
                         />
                         <FormLabel htmlFor='password'>Password</FormLabel>
                         <FormInput
                             type='password'
                             value={password}
-                            onChange={(e) => setPassword(e.target.value)} // Update password state
+                            onChange={(e) => setPassword(e.target.value)}
                             required 
                         />
                         <FormButton type='submit'>Continue</FormButton>
@@ -76,7 +71,7 @@ export const SignIn = () => {
                 </FormContent>
             </FormWrap>
         </Container>
-    )
+    );
 }
 
 export default SignIn;
