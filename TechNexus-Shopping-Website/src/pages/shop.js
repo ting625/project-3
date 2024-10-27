@@ -13,7 +13,6 @@ import {
   ShopH2,
   ShopP,
   AddToCartButton,
-  RemoveFromCartButton,
   CartSummaryContainer,
   CartTitle,
   CartItemsList,

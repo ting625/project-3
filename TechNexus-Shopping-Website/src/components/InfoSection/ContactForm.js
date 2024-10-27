@@ -1,68 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react'
 
 function ContactForm() {
-	const [submitted, setSubmitted] = useState(false);
+	return ( <div>
+		<form
+			name="contact v1"
+			method='post'
+			data-netlify="true"
+			onSubmit="submit"
+			data-netlify-honeypot="bot-field"
+		>
+			<input type='hidden' name='form-name' value="contact v1" />
 
-	// useEffect to log the state change after it updates
-	useEffect(() => {
-		if (submitted) {
-			console.log("Submitted state:", submitted);
-		}
-	}, [submitted]);
+			<div hidden>
+				<input name='bot-field' />
+			</div>
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Form submitted!"); // Log on form submit
-		setSubmitted(true); // Set submission state to true on successful submission
-	};
+			<div>
+				<label>Name<br />
+					<input type='text' name='name' />
+				</label>
+			</div>
 
-	return (
-		<div>
-			{submitted ? (
-				<p>Sign up successfully!</p>
-			) : (
-				<form
-					name="contact v1"
-					method="POST"
-					action="/" // Optional for local testing; can remove for Netlify
-					onSubmit={handleSubmit}
-					data-netlify-honeypot="bot-field"
-				>
-					<input type="hidden" name="form-name" value="contact v1" />
+			<div>
+				<label htmlFor='email' >Email</label><br />
+				<input id="email" type='email' name='email' />
+			</div>
 
-					<div hidden>
-						<input name="bot-field" />
-					</div>
+			<div>
+				<label>Message<br />
+					<textarea name='comments'></textarea>
+				</label>
+			</div>
 
-					<div>
-						<label>
-							Name<br />
-							<input type="text" name="name" required />
-						</label>
-					</div>
+			<button type='submit'>Send Message</button>
 
-					<div>
-						<label htmlFor="email">Email</label><br />
-						<input id="email" type="email" name="email" required />
-					</div>
+		</form>
 
-					<div>
-						<label>
-							Message<br />
-							<textarea name="comments" required></textarea>
-						</label>
-					</div>
-
-					<button 
-						type="submit"
-						onClick={() => console.log("Button clicked")} // Log to confirm button click
-					>
-						Send Message
-					</button>
-				</form>
-			)}
-		</div>
-	);
+	</div>
+	)
 }
 
-export default ContactForm;
+export default ContactForm
